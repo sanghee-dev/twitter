@@ -27,6 +27,7 @@ const Home = () => {
   };
   const onChange = (event) => {
     const { value } = event.target;
+    setTweet(value);
   };
   return (
     <div>
