@@ -38,6 +38,7 @@ const Home = ({ userObj }) => {
     };
     reader.readAsDataURL(theFile);
   };
+  const onClearAttachment = () => setAttachment(null);
   return (
     <div>
       <form onSubmit={onSubmit}>
@@ -53,7 +54,7 @@ const Home = ({ userObj }) => {
         {attachment && (
           <div>
             <img src={attachment} width="50px" height="50px" />
-            <button>Clear</button>
+            <button onClick={onClearAttachment}>Clear</button>
           </div>
         )}
       </form>
