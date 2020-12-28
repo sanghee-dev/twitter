@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { dbService } from "fbase";
+import { v4 as uuidv4 } from "uuid";
+import { dbService, storageService } from "fbase";
 import Tweet from "components/Tweet";
 
 const Home = ({ userObj }) => {
@@ -17,12 +18,15 @@ const Home = ({ userObj }) => {
   }, []);
   const onSubmit = async (event) => {
     event.preventDefault();
-    await dbService.collection("tweets").add({
+    const fileRef = storageService.ref().child(`${userObj.email}/${uuidv4()}`);
+    const response = await fileRef.putString(attachment, "data_url");
+    console.log(response);
+    /* await dbService.collection("tweets").add({
       text: tweet,
       createdAt: Date.now(),
       creatorId: userObj.uid,
     });
-    setTweet("");
+    setTweet(""); */
   };
   const onChange = (event) => {
     const { value } = event.target;
@@ -38,7 +42,7 @@ const Home = ({ userObj }) => {
     };
     reader.readAsDataURL(theFile);
   };
-  const onClearAttachment = () => setAttachment(null);
+  const clearAttachment = () => setAttachment(null);
   return (
     <div>
       <form onSubmit={onSubmit}>
@@ -54,7 +58,7 @@ const Home = ({ userObj }) => {
         {attachment && (
           <div>
             <img src={attachment} width="50px" height="50px" />
-            <button onClick={onClearAttachment}>Clear</button>
+            <button onClick={clearAttachment}>Clear</button>
           </div>
         )}
       </form>
