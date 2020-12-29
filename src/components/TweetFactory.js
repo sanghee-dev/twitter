@@ -16,7 +16,6 @@ const TweetFactory = ({ userObj }) => {
       const response = await attachmentRef.putString(attachment, "data_url");
       attachmentUrl = await response.ref.getDownloadURL();
     }
-
     const getTime = () => {
       const date = new Date();
       const year = date.getFullYear();
@@ -25,30 +24,43 @@ const TweetFactory = ({ userObj }) => {
       const hours = date.getHours();
       const minutes = date.getMinutes();
       const seconds = date.getSeconds();
-      const currentTime = `${String(year).substring(2, 4)}${
-        month < 10 ? `0${month}` : month
-      }${day < 10 ? `0${day}` : day}${hours < 10 ? `0${hours}` : hours}${
+      let milliseconds = date.getMilliseconds();
+      if (milliseconds < 10) {
+        milliseconds = `00${milliseconds}`;
+      } else if (milliseconds < 100) {
+        milliseconds = `0${milliseconds}`;
+      } else {
+        milliseconds = milliseconds;
+      }
+      const currentTime = `${year}${month < 10 ? `0${month}` : month}${
+        day < 10 ? `0${day}` : day
+      }${hours < 10 ? `0${hours}` : hours}${
         minutes < 10 ? `0${minutes}` : minutes
-      }${seconds < 10 ? `0${seconds}` : seconds}`;
+      }${seconds < 10 ? `0${seconds}` : seconds}${milliseconds}`;
       return currentTime;
     };
-
     const tweetObj = {
-      createdAt: getTime(),
       text: tweet,
+      createdAt: getTime(),
       attachmentUrl,
-      creatorId: userObj.uid,
+      userId: userObj.uid,
       displayName: userObj.displayName,
       photoURL: userObj.photoURL,
     };
-    await dbService.collection("tweets").add(tweetObj);
+    await dbService
+      .collection("tweets")
+      .doc(`${10 ** 17 - Number(tweetObj.createdAt)}${tweetObj.userId}`)
+      .set(tweetObj);
     setTweet("");
     setAttachment("");
+    console.log(tweetObj.createdAt.length);
   };
+
   const onChange = (event) => {
     const { value } = event.target;
     setTweet(value);
   };
+
   const onFileChange = (event) => {
     const { files } = event.target;
     const theFile = files[0];
