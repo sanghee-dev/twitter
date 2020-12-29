@@ -1,7 +1,7 @@
 import { dbService, storageService } from "fbase";
 import React, { useState } from "react";
 
-const Tweet = ({ tweetObj, isOwner, attachmentUrl, displayName, photoURL }) => {
+const Tweet = ({ tweetObj, isOwner }) => {
   const [editing, setEditing] = useState(false);
   const [newTweet, setNewTweet] = useState(tweetObj.text);
   const onDeleteClick = async () => {
@@ -12,7 +12,7 @@ const Tweet = ({ tweetObj, isOwner, attachmentUrl, displayName, photoURL }) => {
     }
   };
   const toggleEditing = () => setEditing((prev) => !prev);
-  const onSubmit = async (event) => {
+  const onEditTweet = async (event) => {
     event.preventDefault();
     await dbService.doc(`tweets/${tweetObj.id}`).update({
       text: newTweet,
@@ -29,7 +29,7 @@ const Tweet = ({ tweetObj, isOwner, attachmentUrl, displayName, photoURL }) => {
         <>
           {isOwner && (
             <>
-              <form onSubmit={onSubmit}>
+              <form onSubmit={onEditTweet}>
                 <input
                   type="text"
                   placeholder="Edit your tweet"
@@ -46,13 +46,26 @@ const Tweet = ({ tweetObj, isOwner, attachmentUrl, displayName, photoURL }) => {
       ) : (
         <div>
           <div>
-            <img src={photoURL} width="25px" height="25px" />
-            <span>{displayName} </span>
-            <span>"{tweetObj.text}"</span>
+            <img
+              src={tweetObj.photoURL}
+              alt={tweetObj.displayName}
+              width="25px"
+              height="25px"
+            />
+            <span>{tweetObj.displayName} </span>
           </div>
-          {tweetObj.attachmentUrl && (
-            <img src={tweetObj.attachmentUrl} width="50px" height="50px" />
-          )}
+          <div>
+            {tweetObj.attachmentUrl && (
+              <img
+                src={tweetObj.attachmentUrl}
+                alt={tweetObj.displayName}
+                width="25px"
+                height="25px"
+              />
+            )}
+            <span>"{tweetObj.text}"</span>
+            <span>{tweetObj.createdAt}</span>
+          </div>
           {isOwner && (
             <>
               <button onClick={onDeleteClick}>Delete</button>

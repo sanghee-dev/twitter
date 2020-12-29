@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { authService, dbService, storageService } from "fbase";
+import React, { useState } from "react";
+import { dbService, authService, storageService } from "fbase";
 import { useHistory } from "react-router-dom";
 
-export default ({ userObj, refreshUser }) => {
+const Profile = ({ userObj, refreshUser }) => {
   const history = useHistory();
   const [newDisplayName, setNewDisplayName] = useState(userObj.displayName);
   const [newProfilePhoto, setNewProfilePhoto] = useState(false);
@@ -16,7 +16,6 @@ export default ({ userObj, refreshUser }) => {
     const { value } = event.target;
     setNewDisplayName(value);
   };
-
   const onSubmit = async (event) => {
     event.preventDefault();
     if (userObj.displayName !== newDisplayName) {
@@ -32,15 +31,6 @@ export default ({ userObj, refreshUser }) => {
       setAttachment("");
       refreshUser();
     }
-  };
-
-  const getMyTweets = async () => {
-    const tweets = await dbService
-      .collection("tweets")
-      .where("creatorId", "==", userObj.uid)
-      .orderBy("createdAt", "decs")
-      .get();
-    console.log(tweets.docs.map((doc) => doc.data()));
   };
 
   const onProfilePhotoChange = async (event) => {
@@ -60,7 +50,12 @@ export default ({ userObj, refreshUser }) => {
 
   return (
     <>
-      <img src={userObj.photoURL} width="50px" height="50px" />
+      <img
+        src={userObj.photoURL}
+        alt={userObj.displayName}
+        width="50px"
+        height="50px"
+      />
       <form onSubmit={onSubmit}>
         <input
           onChange={onChange}
@@ -75,3 +70,5 @@ export default ({ userObj, refreshUser }) => {
     </>
   );
 };
+
+export default Profile;
