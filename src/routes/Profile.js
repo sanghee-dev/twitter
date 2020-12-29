@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { authService, dbService, storageService } from "fbase";
 import { useHistory } from "react-router-dom";
 
-export default ({ userObj }) => {
+export default ({ userObj, refreshUser }) => {
   const history = useHistory();
   const [newDisplayName, setNewDisplayName] = useState(userObj.displayName);
   const [newProfilePhoto, setNewProfilePhoto] = useState(false);
@@ -20,21 +20,17 @@ export default ({ userObj }) => {
   const onSubmit = async (event) => {
     event.preventDefault();
     if (userObj.displayName !== newDisplayName) {
-      await dbService.collection("users").doc(userObj.uid).update({
-        displayName: newDisplayName,
-      });
       await userObj.updateProfile({
         displayName: newDisplayName,
       });
+      refreshUser();
     }
     if (newProfilePhoto) {
-      await dbService.collection("users").doc(userObj.uid).update({
-        photoURL: attachment,
-      });
       await userObj.updateProfile({
         photoURL: attachment,
       });
       setAttachment("");
+      refreshUser();
     }
   };
 

@@ -1,29 +1,47 @@
 import React, { useState, useEffect } from "react";
 import AppRouter from "components/Router";
-import { dbService, authService } from "fbase";
+import { authService } from "fbase";
 
 const App = () => {
   const [init, setInit] = useState(false);
   const [userObj, setUserObj] = useState(null);
-
   useEffect(() => {
     authService.onAuthStateChanged((user) => {
       if (user) {
-        setUserObj(user);
-        dbService.collection("users").doc(user.uid).set({
-          creatorId: user.uid,
+        setUserObj({
           displayName: user.displayName,
+          email: user.email,
+          metadata: user.metadata,
+          phoneNumber: user.phoneNumber,
           photoURL: user.photoURL,
+          uid: user.uid,
+          updateProfile: (args) => user.updateProfile(args),
         });
       }
       setInit(true);
     });
   }, []);
+  const refreshUser = () => {
+    const user = authService.currentUser;
+    setUserObj({
+      displayName: user.displayName,
+      email: user.email,
+      metadata: user.metadata,
+      phoneNumber: user.phoneNumber,
+      photoURL: user.photoURL,
+      uid: user.uid,
+      updateProfile: (args) => user.updateProfile(args),
+    });
+  };
 
   return (
     <>
       {init ? (
-        <AppRouter isLoggedIn={Boolean(userObj)} userObj={userObj} />
+        <AppRouter
+          refreshUser={refreshUser}
+          isLoggedIn={Boolean(userObj)}
+          userObj={userObj}
+        />
       ) : (
         "Initializing..."
       )}

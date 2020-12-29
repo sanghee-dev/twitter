@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 import { dbService, storageService } from "fbase";
 import Tweet from "components/Tweet";
 
-const Home = ({ userObj }) => {
+const Home = ({ userObj, userProfile }) => {
   const [tweet, setTweet] = useState("");
   const [tweets, setTweets] = useState([]);
   const [attachment, setAttachment] = useState("");
@@ -79,6 +79,7 @@ const Home = ({ userObj }) => {
             isOwner={tweet.creatorId === userObj.uid}
             displayName={userObj.displayName}
             photoURL={userObj.photoURL}
+            userProfile={userProfile}
           />
         ))}
       </div>
