@@ -1,7 +1,7 @@
 import { dbService, storageService } from "fbase";
 import React, { useState } from "react";
 
-const Tweet = ({ tweetObj, isOwner, attachmentUrl }) => {
+const Tweet = ({ tweetObj, isOwner, attachmentUrl, displayName, photoURL }) => {
   const [editing, setEditing] = useState(false);
   const [newTweet, setNewTweet] = useState(tweetObj.text);
   const onDeleteClick = async () => {
@@ -45,7 +45,11 @@ const Tweet = ({ tweetObj, isOwner, attachmentUrl }) => {
         </>
       ) : (
         <div>
-          <span>{tweetObj.text}</span>
+          <div>
+            <img src={photoURL} width="25px" height="25px" />
+            <span>{displayName} </span>
+            <span>"{tweetObj.text}"</span>
+          </div>
           {tweetObj.attachmentUrl && (
             <img src={tweetObj.attachmentUrl} width="50px" height="50px" />
           )}

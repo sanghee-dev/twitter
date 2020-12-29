@@ -6,7 +6,7 @@ import Tweet from "components/Tweet";
 const Home = ({ userObj }) => {
   const [tweet, setTweet] = useState("");
   const [tweets, setTweets] = useState([]);
-  const [attachment, setAttachment] = useState();
+  const [attachment, setAttachment] = useState("");
   useEffect(() => {
     dbService.collection("tweets").onSnapshot((snapshot) => {
       const tweetArray = snapshot.docs.map((doc) => ({
@@ -51,6 +51,7 @@ const Home = ({ userObj }) => {
     reader.readAsDataURL(theFile);
   };
   const clearAttachment = () => setAttachment(null);
+
   return (
     <div>
       <form onSubmit={onSubmit}>
@@ -76,6 +77,8 @@ const Home = ({ userObj }) => {
             key={tweet.id}
             tweetObj={tweet}
             isOwner={tweet.creatorId === userObj.uid}
+            displayName={userObj.displayName}
+            photoURL={userObj.photoURL}
           />
         ))}
       </div>
