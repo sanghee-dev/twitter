@@ -50,6 +50,7 @@ const Profile = ({ userObj, refreshUser }) => {
 
   return (
     <>
+      <header>{userObj.displayName}'s Profile</header>
       <img
         src={userObj.photoURL}
         alt={userObj.displayName}

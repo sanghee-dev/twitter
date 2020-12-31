@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  overflow-x: hidden;
+  margin-right: calc(-1 * (100vw - 100%));
+}
+input {
+  all: unset;
+  box-sizing: border-box;
+}
+
+/* setting */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 12px;
+  background-color: white;
+  color: black;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* App */
+.app__container {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: hidden;
+  justify-content: center;
+}
+.app__spinner {
+  color: var(--main-color);
+  font-size: 100px;
+}

@@ -1,6 +1,14 @@
 import React, { useState, useEffect } from "react";
 import AppRouter from "components/Router";
 import { authService } from "fbase";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faSpinner,
+  faCircleNotch,
+  faSync,
+  faCog,
+  faStroopwafel,
+} from "@fortawesome/free-solid-svg-icons";
 
 const App = () => {
   const [init, setInit] = useState(false);
@@ -45,9 +53,12 @@ const App = () => {
           userObj={userObj}
         />
       ) : (
-        "Initializing..."
+        <>
+          <div className="app__container container">
+            <FontAwesomeIcon icon={faSpinner} pulse className="app__spinner" />
+          </div>
+        </>
       )}
-      <footer>&copy;{new Date().getFullYear()} Twitter</footer>
     </>
   );
 };

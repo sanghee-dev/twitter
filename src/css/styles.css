@@ -1,0 +1,33 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+/* conponents */
+@import "css/app.css";
+@import "css/auth.css";
+
+/* variables */
+:root {
+  --main-color: rgba(4, 170, 255, 1);
+  --light-color: rgba(4, 170, 255, 0.5);
+  --lighter-color: rgba(4, 170, 255, 0.1);
+  --dark-color: rgb(3, 146, 218);
+}
+
+/* scroll */
+body::-webkit-scrollbar {
+  width: 2px;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: var(--light-color);
+}
+body::-webkit-scrollbar-track {
+  background-color: white;
+}
+/* selection */
+::selection {
+  background-color: var(--main-color);
+  color: white;
+}
+/* highlighter */
+.highlighter {
+  background: linear-gradient(to top, var(--main-color) 50%, transparent 50%);
+}

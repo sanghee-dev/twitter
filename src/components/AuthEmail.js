@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { authService } from "fbase";
 
-const AuthForm = () => {
+const AuthForm = ({ newAccount }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [newAccount, setNewAccount] = useState(true);
   const [error, setError] = useState("");
 
   const onChange = (event) => {
@@ -15,7 +14,6 @@ const AuthForm = () => {
       setPassword(value);
     }
   };
-  const toggleAccount = () => setNewAccount((prev) => !prev);
   const onSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -35,7 +33,7 @@ const AuthForm = () => {
   };
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} className="authEmail__container container">
       <input
         name="email"
         type="email"
@@ -43,6 +41,7 @@ const AuthForm = () => {
         required
         value={email}
         onChange={onChange}
+        className="auth__input"
       />
       <input
         name="password"
@@ -51,12 +50,14 @@ const AuthForm = () => {
         required
         value={password}
         onChange={onChange}
+        className="auth__input"
       />
-      <input type="submit" value={newAccount ? "Create Account" : "Log In"} />{" "}
-      <div>{error}</div>
-      <div onClick={toggleAccount}>
-        {newAccount ? "Sign In" : "Create Account"}
-      </div>
+      <input
+        type="submit"
+        value={newAccount ? "Create Account" : "Sign In"}
+        className="auth__input auth__submit"
+      />
+      <div className="auth__error">{error && <span>{error}</span>}</div>
     </form>
   );
 };
