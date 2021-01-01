@@ -20,18 +20,22 @@ const AuthSocial = ({ newAccount }) => {
       <button
         onClick={onSocialClick}
         name="google"
-        className="auth__button auth__input"
+        className="auth__button auth__input container"
       >
-        <FontAwesomeIcon icon={faGoogle} className="auth__button__logo" />
-        Continue with Google
+        <div>
+          <FontAwesomeIcon icon={faGoogle} className="auth__button__logo" />
+        </div>
+        <span>Continue with Google</span>
       </button>
       <button
         onClick={onSocialClick}
         name="github"
-        className="auth__button auth__input"
+        className="auth__button auth__input  container"
       >
-        <FontAwesomeIcon icon={faGithub} className="auth__button__logo" />
-        Continue with GitHub
+        <div>
+          <FontAwesomeIcon icon={faGithub} className="auth__button__logo" />
+        </div>
+        <span>Continue with GitHub</span>
       </button>
       <input
         type="submit"

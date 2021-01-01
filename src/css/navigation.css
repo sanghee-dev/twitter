@@ -1,0 +1,15 @@
+.nav__container {
+  width: 100vw;
+  padding: 12px 0;
+  position: fixed;
+  bottom: 0;
+  border: 1px solid red;
+  flex-direction: row;
+}
+
+.nav__icon {
+  text-decoration: none;
+  color: var(--main-color);
+  width: 50;
+  border: 1px solid red;
+}
