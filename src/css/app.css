@@ -25,10 +25,28 @@ body {
   align-items: center;
 }
 
+/* elements */
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.icon__container {
+  width: 100vw;
+  justify-content: space-between;
+  padding: 4px 36px;
+  flex-direction: row;
+}
+.button {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+.icon {
+  text-decoration: none;
+  color: var(--main-blue);
+  font-size: 24px;
 }
 
 /* App */
@@ -38,6 +56,6 @@ body {
   overflow-y: hidden;
 }
 .app__spinner {
-  color: var(--main-color);
+  color: var(--main-blue);
   font-size: 60px;
 }

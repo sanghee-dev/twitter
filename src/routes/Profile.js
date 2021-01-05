@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { authService, storageService } from "fbase";
 import { useHistory } from "react-router-dom";
+import Header from "components/Header";
 
 const Profile = ({ userObj, refreshUser }) => {
   const history = useHistory();
@@ -50,6 +51,7 @@ const Profile = ({ userObj, refreshUser }) => {
 
   return (
     <>
+      <Header />
       <header>{userObj.displayName}'s Profile</header>
       <img
         src={userObj.photoURL}

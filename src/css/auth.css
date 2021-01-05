@@ -3,7 +3,7 @@
   flex-direction: column;
 }
 .auth__header__logo {
-  color: var(--main-color);
+  color: var(--main-blue);
   font-size: 48px;
   margin-top: 48px;
   margin-bottom: 72px;
@@ -43,22 +43,22 @@
   box-shadow: rgba(99, 99, 99, 0.2) 0px 1px 4px 0px;
   cursor: pointer;
   font-size: 12px;
-  color: var(--main-color);
+  color: var(--main-blue);
   text-align: center;
   outline: none;
 }
 .auth__input::placeholder {
-  color: var(--main-color);
+  color: var(--main-blue);
 }
 .auth__input:focus {
-  border: 1px solid var(--main-color);
+  border: 1px solid var(--main-blue);
   color: black;
 }
 .auth__input:focus::placeholder {
-  color: var(--light-color);
+  color: var(--light-blue);
 }
 .auth__input:hover {
-  border: 1px solid var(--main-color);
+  border: 1px solid var(--main-blue);
   transition: all var(--transition-delay);
 }
 
@@ -68,13 +68,13 @@
 .auth__submit {
   margin-bottom: 32px;
   cursor: pointer;
-  background: var(--main-color);
+  background: var(--main-blue);
   color: white;
   text-align: center;
-  border: 1.5px solid var(--main-color);
+  border: 1.5px solid var(--main-blue);
 }
 .auth__submit:hover {
-  background: var(--dark-color);
+  background: var(--dark-blue);
   transition: border var(--transition-delay);
 }
 
@@ -88,7 +88,7 @@
   justify-content: center;
 }
 .auth__button:active {
-  background-color: var(--main-color);
+  background-color: var(--main-blue);
 }
 .auth__button:active > span,
 .auth__button:active > div {
@@ -97,7 +97,7 @@
 }
 .auth__button:not(:active) > span,
 .auth__button:not(:active) > div {
-  color: var(--main-color);
+  color: var(--main-blue);
 }
 .auth__button__logo {
   margin-right: 4px;
@@ -118,7 +118,7 @@
 }
 .auth__toggle {
   height: 0;
-  color: var(--main-color);
+  color: var(--main-blue);
   cursor: pointer;
   display: block;
   font-size: 12px;

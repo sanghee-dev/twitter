@@ -1,20 +1,6 @@
 .nav__container {
-  width: 100vw;
-  justify-content: space-around;
-  padding: 12px 0;
   position: fixed;
   bottom: 0;
   left: 0;
   border-top: var(--main-border);
-  flex-direction: row;
-}
-.nav__button {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-}
-.nav__icon {
-  text-decoration: none;
-  color: var(--main-color);
-  font-size: 28px;
 }
