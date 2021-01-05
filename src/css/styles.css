@@ -1,11 +1,11 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
 
 /* conponents */
-@import "css/app.css";
-@import "css/auth.css";
-@import "css/tweet.css";
-@import "css/tweetFactory.css";
-@import "css/navigation.css";
+@import "css/App.css";
+@import "css/Auth.css";
+@import "css/Tweet.css";
+@import "css/TweetFactory.css";
+@import "css/Navigation.css";
 
 /* variables */
 :root {
