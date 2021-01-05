@@ -2,13 +2,7 @@ import React, { useState, useEffect } from "react";
 import AppRouter from "components/Router";
 import { authService } from "fbase";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faSpinner,
-  faCircleNotch,
-  faSync,
-  faCog,
-  faStroopwafel,
-} from "@fortawesome/free-solid-svg-icons";
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 
 const App = () => {
   const [init, setInit] = useState(false);

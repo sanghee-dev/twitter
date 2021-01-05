@@ -25,20 +25,19 @@ body {
   align-items: center;
 }
 
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* App */
 .app__container {
   width: 100vw;
   height: 100vh;
   overflow-y: hidden;
-  justify-content: center;
 }
 .app__spinner {
   color: var(--main-color);
-  font-size: 100px;
-}
-
-.container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  font-size: 60px;
 }

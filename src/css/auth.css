@@ -5,7 +5,8 @@
 .auth__header__logo {
   color: var(--main-color);
   font-size: 48px;
-  margin: 36px;
+  margin-top: 48px;
+  margin-bottom: 72px;
 }
 .auth__header__text {
   width: 80vw;

@@ -11,8 +11,10 @@
 :root {
   --main-color: rgba(4, 170, 255, 1);
   --light-color: rgba(4, 170, 255, 0.5);
-  --lighter-color: rgba(4, 170, 255, 0);
+  --lighter-color: rgba(4, 170, 255, 0.2);
   --dark-color: rgb(3, 146, 218);
+
+  --main-border: 1px solid rgba(211, 211, 211, 0.5);
 
   --transition-delay: 0.25s;
 }

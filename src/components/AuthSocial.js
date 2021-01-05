@@ -30,7 +30,7 @@ const AuthSocial = ({ newAccount }) => {
       <button
         onClick={onSocialClick}
         name="github"
-        className="auth__button auth__input  container"
+        className="auth__button auth__input container"
       >
         <div>
           <FontAwesomeIcon icon={faGithub} className="auth__button__logo" />
