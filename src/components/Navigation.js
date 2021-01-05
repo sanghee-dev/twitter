@@ -17,12 +17,16 @@ const Navigation = ({ userObj }) => (
           <FontAwesomeIcon icon={faUser} className="icon" />
         </li>
       </Link>
-      <li className="button container">
-        <FontAwesomeIcon icon={faBell} className="icon" />
-      </li>
-      <li className="button container">
-        <FontAwesomeIcon icon={faCog} className="icon" />
-      </li>
+      <Link>
+        <li className="button container">
+          <FontAwesomeIcon icon={faBell} className="icon" />
+        </li>
+      </Link>
+      <Link>
+        <li className="button container">
+          <FontAwesomeIcon icon={faCog} className="icon" />
+        </li>
+      </Link>
     </ul>
   </nav>
 );

@@ -35,18 +35,25 @@ body {
 .icon__container {
   width: 100vw;
   justify-content: space-between;
-  padding: 4px 36px;
+  padding: var(--column-space) var(--row-space);
   flex-direction: row;
 }
 .button {
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
 }
 .icon {
   text-decoration: none;
   color: var(--main-blue);
   font-size: 24px;
+}
+
+.profile__image {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-right: var(--row-space);
 }
 
 /* App */

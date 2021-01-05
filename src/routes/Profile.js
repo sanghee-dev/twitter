@@ -52,7 +52,7 @@ const Profile = ({ userObj, refreshUser }) => {
   return (
     <>
       <Header />
-      <header>{userObj.displayName}'s Profile</header>
+      {/* <header>{userObj.displayName}'s Profile</header> */}
       <img
         src={userObj.photoURL}
         alt={userObj.displayName}

@@ -1,0 +1,69 @@
+.tweetFactory__container {
+  display: flex;
+  flex-direction: row;
+  padding: var(--column-space) 0;
+}
+.tweetFactory__column {
+  display: flex;
+  flex-direction: column;
+}
+.tweetFactory__column > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* column 1 */
+.tweetFactory__column:first-child {
+  width: 20vw;
+}
+
+/* column 2 */
+.tweetFactory__column:nth-child(2) {
+  width: 80vw;
+  border: 1px solid red;
+}
+.tweet__attachment {
+  width: 73.5vw;
+  height: 160px;
+  background-size: contain;
+  border-radius: 12px;
+  border: var(--main-border);
+}
+.tweet__attachment__button {
+  position: absolute;
+  border: none;
+}
+
+/* 정리하자 */
+.tweet__input__text {
+  width: 200px;
+  height: 30px;
+  padding: 4px;
+  font-size: 20px;
+}
+.tweet__input__text::placeholder {
+  font-size: 20px;
+  color: var(--darker-gray);
+}
+.tweet__input__label {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+.tweet__input__file {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+.tweet__input__button {
+  all: unset;
+  width: 70px;
+  height: 40px;
+  border-radius: 20px;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  background-color: var(--main-blue);
+}

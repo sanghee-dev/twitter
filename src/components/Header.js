@@ -5,7 +5,6 @@ import { faBars, faStarOfLife } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => (
   <>
-    <div></div>
     <div className="header__container icon__container container">
       <li className="button container">
         <FontAwesomeIcon icon={faBars} className="icon" />

@@ -1,2 +1,4 @@
 .header__container {
+  background-color: white;
+  border-bottom: var(--main-border);
 }

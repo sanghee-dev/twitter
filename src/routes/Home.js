@@ -20,8 +20,7 @@ const Home = ({ userObj }) => {
   return (
     <>
       <Header />
-      <header>Tweet</header>
-      <div className="home__container container">
+      <div className="home__container">
         <TweetFactory userObj={userObj} />
         <div style={{ marginTop: 50 }}>
           {tweets.map((tweet) => (

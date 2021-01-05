@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { dbService, storageService } from "fbase";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes, faImages } from "@fortawesome/free-solid-svg-icons";
 
 const TweetFactory = ({ userObj }) => {
   const [tweet, setTweet] = useState("");
@@ -74,28 +76,66 @@ const TweetFactory = ({ userObj }) => {
   const clearAttachment = () => setAttachment(null);
 
   return (
-    <form onSubmit={onSubmit}>
-      <input
-        value={tweet}
-        onChange={onChange}
-        type="text"
-        placeholder="What's on your mind?"
-        maxLength={120}
-      />
-      <input onChange={onFileChange} type="file" accept="image/*" />
-      <input type="submit" value="Tweet" />
-      {attachment && (
-        <div>
+    <>
+      <form onSubmit={onSubmit} div className="tweetFactory__container">
+        <div className="tweetFactory__column">
           <img
-            src={attachment}
+            src={userObj.photoURL}
             alt={userObj.displayName}
-            width="50px"
-            height="50px"
+            className="profile__image"
           />
-          <button onClick={clearAttachment}>Clear</button>
         </div>
-      )}
-    </form>
+        <div className="tweetFactory__column">
+          <div>
+            {attachment && (
+              <>
+                <div>
+                  <img
+                    src={attachment}
+                    alt={userObj.displayName}
+                    className="tweet__attachment"
+                  />
+                </div>
+                <button
+                  onClick={clearAttachment}
+                  className="tweet__attachment__button button"
+                >
+                  <FontAwesomeIcon icon={faTimes} className="icon" />
+                </button>
+              </>
+            )}
+          </div>
+          <div>
+            <input
+              value={tweet}
+              onChange={onChange}
+              type="text"
+              placeholder="What's on your mind?"
+              maxLength={120}
+              className="tweet__input__text"
+            />
+          </div>
+          <div>
+            <label
+              for="tweet__input__file"
+              className="tweet__input__label container"
+            >
+              <FontAwesomeIcon icon={faImages} className="icon" />
+            </label>
+            <input
+              onChange={onFileChange}
+              type="file"
+              id="tweet__input__file"
+              accept="image/*"
+              className="tweet__input__file"
+            />
+            <button type="submit" className="tweet__input__button container">
+              Tweet
+            </button>
+          </div>
+        </div>
+      </form>
+    </>
   );
 };
 

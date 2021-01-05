@@ -49,8 +49,7 @@ const Tweet = ({ tweetObj, isOwner }) => {
             <img
               src={tweetObj.photoURL}
               alt={tweetObj.displayName}
-              width="25px"
-              height="25px"
+              className="profile__image"
             />
             <span>{tweetObj.displayName} </span>
           </div>
