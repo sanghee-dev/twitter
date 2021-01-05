@@ -87,6 +87,16 @@ const TweetFactory = ({ userObj }) => {
         </div>
         <div className="tweetFactory__column">
           <div>
+            <input
+              value={tweet}
+              onChange={onChange}
+              type="text"
+              placeholder="What's on your mind?"
+              maxLength={120}
+              className="tweet__input__text"
+            />
+          </div>
+          <div>
             {attachment && (
               <>
                 <div>
@@ -105,20 +115,10 @@ const TweetFactory = ({ userObj }) => {
               </>
             )}
           </div>
-          <div>
-            <input
-              value={tweet}
-              onChange={onChange}
-              type="text"
-              placeholder="What's on your mind?"
-              maxLength={120}
-              className="tweet__input__text"
-            />
-          </div>
-          <div>
+          <div className="tweet__input__container">
             <label
               for="tweet__input__file"
-              className="tweet__input__label container"
+              className="tweet__input__label container button"
             >
               <FontAwesomeIcon icon={faImages} className="icon" />
             </label>

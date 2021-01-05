@@ -16,7 +16,7 @@ body {
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 12px;
   background-color: white;
-  color: black;
+  color: var(--default-black);
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -39,9 +39,12 @@ body {
   flex-direction: row;
 }
 .button {
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
+}
+.button:hover {
+  background-color: var(--lighter-blue);
 }
 .icon {
   text-decoration: none;
