@@ -3,6 +3,8 @@
 /* conponents */
 @import "css/App.css";
 @import "css/Auth.css";
+@import "css/AuthEmail.css";
+@import "css/AuthSocial.css";
 @import "css/Tweet.css";
 @import "css/TweetFactory.css";
 @import "css/Navigation.css";
@@ -11,21 +13,27 @@
 
 /* variables */
 :root {
-  --main-blue: rgb(4, 170, 255);
-  --light-blue: rgb(110, 207, 255);
-  --lighter-blue: rgb(190, 233, 255);
+  /* color */
+  --main-blue: rgb(29, 161, 242);
+  --light-blue: rgb(116, 202, 254);
+  --lighter-blue: rgb(201, 233, 253);
   --dark-blue: rgb(3, 146, 218);
-  --light-gray: rgb(250, 250, 250);
+  --light-gray: rgb(240, 240, 240);
   --dark-gray: rgb(220, 220, 220);
   --darker-gray: rgb(180, 180, 180);
   --darkest-gray: rgb(150, 150, 150);
   --default-black: rgb(50, 50, 50);
-
+  /* font */
+  --h1: 26px;
+  --h2: 20px;
+  --h3: 15px;
+  --h4: 12px;
+  /* border */
   --main-border: 1px solid var(--dark-gray);
-
+  /* space */
   --row-space: 24px;
   --column-space: 8px;
-
+  /* delay */
   --transition-delay: 0.25s;
 }
 
@@ -47,4 +55,17 @@ body::-webkit-scrollbar-track {
 /* highlighter */
 .highlighter {
   background: linear-gradient(to top, var(--main-blue) 50%, transparent 50%);
+}
+/* font */
+h1 {
+  font-size: var(--h1);
+}
+h2 {
+  font-size: var(--h2);
+}
+h3 {
+  font-size: var(--h3);
+}
+h4 {
+  font-size: var(--h4);
 }

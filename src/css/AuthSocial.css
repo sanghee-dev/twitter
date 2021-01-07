@@ -1,0 +1,18 @@
+.auth__buttons {
+  flex-direction: column;
+}
+.auth__button:active {
+  background-color: var(--main-blue);
+}
+.auth__button:active > span,
+.auth__button:active > div {
+  color: white;
+  transition: all var(--transition-delay);
+}
+.auth__button:not(:active) > span,
+.auth__button:not(:active) > div {
+  color: var(--main-blue);
+}
+.auth__button__logo {
+  margin-right: 4px;
+}

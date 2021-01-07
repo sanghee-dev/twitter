@@ -1,5 +1,7 @@
 import { dbService, storageService } from "fbase";
 import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashAlt, faEdit } from "@fortawesome/free-solid-svg-icons";
 
 const Tweet = ({ tweetObj, isOwner }) => {
   const [editing, setEditing] = useState(false);
@@ -44,33 +46,59 @@ const Tweet = ({ tweetObj, isOwner }) => {
           )}
         </>
       ) : (
-        <div>
-          <div>
-            <img
-              src={tweetObj.photoURL}
-              alt={tweetObj.displayName}
-              className="profile__image"
-            />
-            <span>{tweetObj.displayName} </span>
+        <div className="tweet__container">
+          <img
+            src={tweetObj.photoURL}
+            alt={tweetObj.displayName}
+            className="profile__image"
+          />
+          <div className="tweet__object">
+            <div>
+              <div className="profile__container">
+                <span className="profile__displayName">
+                  {tweetObj.displayName}
+                </span>
+                <span className="profile__nickname">
+                  @{tweetObj.displayName}
+                </span>
+                <span className="tweet__createdAt">
+                  {tweetObj.createdAt.substring(6, 8)},
+                  {tweetObj.createdAt.substring(4, 6)},
+                  {tweetObj.createdAt.substring(0, 4)}
+                </span>
+              </div>
+            </div>
+            <div className="tweet__text__container">
+              <div className="tweet__text">{tweetObj.text}</div>
+              <div>
+                {isOwner && (
+                  <>
+                    <button
+                      onClick={onDeleteClick}
+                      className="tweet__button button"
+                    >
+                      <FontAwesomeIcon icon={faTrashAlt} className="icon" />
+                    </button>
+                    <button
+                      onClick={toggleEditing}
+                      className="tweet__button button"
+                    >
+                      <FontAwesomeIcon icon={faEdit} className="icon" />
+                    </button>
+                  </>
+                )}
+              </div>
+            </div>
+            <div>
+              {tweetObj.attachmentUrl && (
+                <img
+                  src={tweetObj.attachmentUrl}
+                  alt={tweetObj.displayName}
+                  className="tweet__attachment"
+                />
+              )}
+            </div>
           </div>
-          <div>
-            {tweetObj.attachmentUrl && (
-              <img
-                src={tweetObj.attachmentUrl}
-                alt={tweetObj.displayName}
-                width="25px"
-                height="25px"
-              />
-            )}
-            <span>"{tweetObj.text}"</span>
-            <span>{tweetObj.createdAt}</span>
-          </div>
-          {isOwner && (
-            <>
-              <button onClick={onDeleteClick}>Delete</button>
-              <button onClick={toggleEditing}>Edit</button>
-            </>
-          )}
         </div>
       )}
     </div>

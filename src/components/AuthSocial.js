@@ -16,7 +16,7 @@ const AuthSocial = ({ newAccount }) => {
   };
 
   return (
-    <div className="auth__buttons">
+    <div className="auth__buttons container">
       <button
         onClick={onSocialClick}
         name="google"

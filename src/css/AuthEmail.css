@@ -1,0 +1,57 @@
+.auth__input {
+  width: 40vw;
+  height: 36px;
+  margin-bottom: var(--column-space);
+  padding: 10px 0px;
+  border: 1px solid white;
+  border-radius: 40px;
+  background-color: white;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 1px 4px 0px;
+  cursor: pointer;
+  font-size: var(--h3);
+  color: var(--main-blue);
+  text-align: center;
+  outline: none;
+}
+.auth__input::placeholder {
+  color: var(--main-blue);
+}
+.auth__input:focus {
+  border: 1px solid var(--main-blue);
+  color: black;
+}
+.auth__input:focus::placeholder {
+  color: var(--light-blue);
+}
+.auth__input:hover {
+  border: 1px solid var(--main-blue);
+  transition: all var(--transition-delay);
+}
+
+.authEmail__input {
+  cursor: text;
+}
+.auth__submit {
+  margin-bottom: 32px;
+  cursor: pointer;
+  background: var(--main-blue);
+  color: white;
+  text-align: center;
+  border: 1.5px solid var(--main-blue);
+}
+.auth__submit:hover {
+  background: var(--dark-blue);
+  transition: border var(--transition-delay);
+}
+
+.authEmail__container {
+  flex-direction: column;
+  position: relative;
+}
+.auth__error {
+  position: absolute;
+  bottom: 16px;
+  color: tomato;
+  text-align: center;
+  font-weight: 500;
+}
