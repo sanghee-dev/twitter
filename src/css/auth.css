@@ -2,46 +2,58 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
+.auth__container > div {
+  width: 50vw;
+  height: 500px;
+  padding: 20px 20px;
+}
 
-/* div first */
+/* auth__content */
 .auth__content {
   background-color: var(--light-blue);
   color: white;
+  background-image: url();
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.auth__content > h2 {
-  margin-right: 4px;
+.auth__content h2 {
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+.auth__content h2 span {
+  margin-left: 20px;
+  line-height: 32px;
 }
 
-/* div second */
-.auth__header {
+/* auth__header */
+.auth__main {
   flex-direction: column;
 }
 .auth__header__logo {
   color: var(--main-blue);
-  font-size: 48px;
-  margin-top: 48px;
-  margin-bottom: 72px;
+  font-size: 40px;
+  margin: 20px 0;
 }
 .auth__header__text {
-  width: 40vw;
+  width: 360px;
   text-align: left;
   font-weight: 600;
   margin-bottom: 16px;
 }
 .auth__header h1 {
-  margin-bottom: 36px;
-  line-height: 30px;
+  margin-bottom: 40px;
+  line-height: 40px;
 }
 
 .auth__copyright {
   width: 100vw;
-  position: fixed;
-  transform: translate(-50%, 0);
-  bottom: 0px;
+  height: 28px;
   padding-top: 8px;
   padding-bottom: 8px;
   background-color: white;
   text-align: center;
+  z-index: 2;
 }
 
 .auth__toggle {
@@ -49,20 +61,51 @@
   color: var(--main-blue);
   cursor: pointer;
   display: block;
-  font-size: 14px;
+  font-size: var(--h3);
   text-decoration: underline;
   text-align: center;
 }
 
-@media screen and (max-width: 600px) {
+/* width < 800px */
+@media screen and (max-width: 800px) {
   .auth__container {
     display: flex;
     flex-direction: column-reverse;
   }
-  .auth__input {
-    width: 80vw;
+  .auth__container > div {
+    width: 100vw;
+  }
+}
+/* width > 800px height > 528px */
+@media screen and (min-width: 800px) and (min-height: 528px) {
+  .auth__container > div {
+    height: 100vh;
+    transform: translateY(-14px);
   }
   .auth__copyright {
-    left: 50%;
+    position: fixed;
+    bottom: 0;
+  }
+}
+
+/* width < 800px and height < 528px */
+@media screen and (max-width: 800px) and (max-height: 478px) {
+  .auth__container > div {
+    height: 478px;
+  }
+  .auth__main {
+    margin-top: 0px;
+  }
+  .auth__copyright {
+    position: unset;
+    margin-top: -14px;
+  }
+}
+/* width < 800px and height > 528px */
+@media screen and (max-width: 800px) and (min-height: 478px) {
+  .auth__container > div {
+  }
+  .auth__main {
+    margin-top: -11px;
   }
 }
