@@ -18,7 +18,7 @@ const Auth = () => {
     <>
       <div className="auth__container">
         <div className="auth__content container">
-          <div>
+          <div className="auth__content__headers">
             <h2>
               <FontAwesomeIcon icon={faSearch} />
               <span>관심사를 팔로우하세요.</span>

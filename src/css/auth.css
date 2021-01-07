@@ -1,3 +1,5 @@
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css");
+
 .auth__container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -12,12 +14,29 @@
 .auth__content {
   background-color: var(--light-blue);
   color: white;
-  background-image: url();
   display: flex;
   flex-direction: column;
   justify-content: center;
+  z-index: -1;
+}
+.auth__content__headers {
+  position: relative;
+  box-sizing: content-box;
+}
+.auth__content__headers::after {
+  font-family: FontAwesome;
+  content: "\f099";
+  font-size: 120vh;
+  z-index: -1;
+  position: absolute;
+  top: 0%;
+  left: 70%;
+  margin: -0.48em -0.42em;
+  color: var(--main-blue);
 }
 .auth__content h2 {
+  z-index: 2;
+  position: relative;
   margin-bottom: 40px;
   font-weight: 600;
 }
@@ -29,6 +48,7 @@
 /* auth__header */
 .auth__main {
   flex-direction: column;
+  background-color: white;
 }
 .auth__header__logo {
   color: var(--main-blue);
