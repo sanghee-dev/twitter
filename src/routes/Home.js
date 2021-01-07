@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { dbService } from "fbase";
-import Header from "components/Header";
 import Tweet from "components/Tweet";
 import TweetFactory from "components/TweetFactory";
 
@@ -19,7 +18,6 @@ const Home = ({ userObj }) => {
 
   return (
     <>
-      <Header />
       <div className="home__container">
         <TweetFactory userObj={userObj} />
         <div style={{ marginTop: 50 }}>
