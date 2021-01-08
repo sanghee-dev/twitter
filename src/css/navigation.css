@@ -1,7 +1,32 @@
 .nav__container {
+  width: 13vw;
+  height: 100vh;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
   position: fixed;
-  bottom: 0;
+  top: 0;
   left: 0;
-  border-top: var(--main-border);
   background-color: white;
+  border-right: var(--main-border);
+}
+
+.nav__write {
+  background-color: var(--main-blue);
+  color: white;
+}
+
+.nav__write .icon {
+  color: white;
+  font-size: 20px;
+}
+.nav__write:hover {
+  background-color: var(--dark-blue);
+}
+.nav__profile__image {
+  margin-right: 0;
+  width: 40px;
+  height: 40px;
 }

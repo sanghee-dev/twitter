@@ -1,6 +1,9 @@
 .home__container {
-  width: 100vw;
-  height: 100vh;
-  padding: 0 var(--row-space);
-  flex-direction: row;
+  width: 87vw;
+  margin-left: 12vw;
+}
+.home__title {
+  padding: 16px var(--default-space);
+  font-weight: 800;
+  border-bottom: var(--main-border);
 }

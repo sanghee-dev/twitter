@@ -39,17 +39,17 @@ body {
   flex-direction: row;
 }
 .button {
-  width: 36px;
-  height: 36px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
 }
 .button:hover {
-  background-color: var(--lighter-blue);
+  background-color: var(--lightest-blue);
 }
 .icon {
   text-decoration: none;
   color: var(--main-blue);
-  font-size: 24px;
+  font-size: 28px;
 }
 
 .profile__image {
@@ -57,6 +57,7 @@ body {
   height: 48px;
   border-radius: 50%;
   margin-right: 8px;
+  border: var(--main-border);
 }
 
 /* App */

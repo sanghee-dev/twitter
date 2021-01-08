@@ -78,14 +78,12 @@ const TweetFactory = ({ userObj }) => {
   return (
     <>
       <form onSubmit={onSubmit} div className="tweetFactory__container">
-        <div className="tweetFactory__column">
-          <img
-            src={userObj.photoURL}
-            alt={userObj.displayName}
-            className="profile__image"
-          />
-        </div>
-        <div className="tweetFactory__column">
+        <img
+          src={userObj.photoURL}
+          alt={userObj.displayName}
+          className="profile__image"
+        />
+        <div className="tweetFactory__input">
           <div>
             <input
               value={tweet}
@@ -93,7 +91,7 @@ const TweetFactory = ({ userObj }) => {
               type="text"
               placeholder="What's on your mind?"
               maxLength={120}
-              className="tweet__input__text"
+              className="tweetFactory__input__text"
             />
           </div>
           <div>
@@ -103,38 +101,42 @@ const TweetFactory = ({ userObj }) => {
                   <img
                     src={attachment}
                     alt={userObj.displayName}
-                    className="tweet__attachment"
+                    className="tweetFactory__attachment"
                   />
                 </div>
                 <button
                   onClick={clearAttachment}
-                  className="tweet__attachment__button button"
+                  className="tweetFactory__attachment__button button"
                 >
                   <FontAwesomeIcon icon={faTimes} className="icon" />
                 </button>
               </>
             )}
           </div>
-          <div className="tweet__input__container">
+          <div className="tweetFactory__input__container">
             <label
-              for="tweet__input__file"
-              className="tweet__input__label container button"
+              for="tweetFactory__input__file"
+              className="tweetFactory__input__label container button"
             >
               <FontAwesomeIcon icon={faImages} className="icon" />
             </label>
             <input
               onChange={onFileChange}
               type="file"
-              id="tweet__input__file"
+              id="tweetFactory__input__file"
               accept="image/*"
-              className="tweet__input__file"
+              className="tweetFactory__input__file"
             />
-            <button type="submit" className="tweet__input__button container">
+            <button
+              type="submit"
+              className="tweetFactory__input__button container"
+            >
               Tweet
             </button>
           </div>
         </div>
       </form>
+      <div className="tweetFactory__line"></div>
     </>
   );
 };

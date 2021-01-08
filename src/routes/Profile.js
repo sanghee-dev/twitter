@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { authService, storageService } from "fbase";
 import { useHistory } from "react-router-dom";
+import Navigation from "components/Navigation";
 
-const Profile = ({ userObj, refreshUser }) => {
+const Profile = ({ isLoggedIn, userObj, refreshUser }) => {
   const history = useHistory();
   const [newDisplayName, setNewDisplayName] = useState(userObj.displayName);
   const [newProfilePhoto, setNewProfilePhoto] = useState(false);
@@ -49,26 +50,28 @@ const Profile = ({ userObj, refreshUser }) => {
   };
 
   return (
-    <>
-      {/* <header>{userObj.displayName}'s Profile</header> */}
-      <img
-        src={userObj.photoURL}
-        alt={userObj.displayName}
-        width="50px"
-        height="50px"
-      />
-      <form onSubmit={onSubmit}>
-        <input
-          onChange={onChange}
-          type="text"
-          placeholder="Display name"
-          value={newDisplayName}
+    <div className="profile__container">
+      <div>
+        <h2>{userObj.displayName}'s Profile</h2>
+        <img
+          src={userObj.photoURL}
+          alt={userObj.displayName}
+          width="50px"
+          height="50px"
         />
-        <input onChange={onProfilePhotoChange} type="file" accept="image/*" />
-        <input type="submit" value="Update Profile" />
-      </form>
-      <button onClick={onLogOutClick}>Log Out</button>
-    </>
+        <form onSubmit={onSubmit}>
+          <input
+            onChange={onChange}
+            type="text"
+            placeholder="Display name"
+            value={newDisplayName}
+          />
+          <input onChange={onProfilePhotoChange} type="file" accept="image/*" />
+          <input type="submit" value="Update Profile" />
+        </form>
+        <button onClick={onLogOutClick}>Log Out</button>
+      </div>
+    </div>
   );
 };
 

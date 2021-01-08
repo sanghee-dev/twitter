@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import { dbService } from "fbase";
 import Tweet from "components/Tweet";
 import TweetFactory from "components/TweetFactory";
+import Navigation from "components/Navigation";
 
-const Home = ({ userObj }) => {
+const Home = ({ isLoggedIn, userObj }) => {
   const [tweets, setTweets] = useState([]);
 
   useEffect(() => {
@@ -17,8 +18,9 @@ const Home = ({ userObj }) => {
   }, []);
 
   return (
-    <>
-      <div className="home__container">
+    <div className="home__container">
+      <div>
+        <h2 className="home__title">Home</h2>
         <TweetFactory userObj={userObj} />
         <div style={{ marginTop: 50 }}>
           {tweets.map((tweet) => (
@@ -32,7 +34,7 @@ const Home = ({ userObj }) => {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

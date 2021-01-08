@@ -1,7 +1,11 @@
 import { dbService, storageService } from "fbase";
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrashAlt, faEdit } from "@fortawesome/free-solid-svg-icons";
+import {
+  faTrashAlt,
+  faEdit,
+  faEllipsisH,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Tweet = ({ tweetObj, isOwner }) => {
   const [editing, setEditing] = useState(false);
@@ -53,20 +57,20 @@ const Tweet = ({ tweetObj, isOwner }) => {
             className="profile__image"
           />
           <div className="tweet__object">
-            <div>
-              <div className="profile__container">
-                <span className="profile__displayName">
+            <div className="tweet__object__container">
+              <div>
+                <span className="tweet__displayName">
                   {tweetObj.displayName}
                 </span>
-                <span className="profile__nickname">
-                  @{tweetObj.displayName}
-                </span>
+                <span className="tweet__nickname">@{tweetObj.displayName}</span>
                 <span className="tweet__createdAt">
+                  <span>·</span>
                   {tweetObj.createdAt.substring(6, 8)},
                   {tweetObj.createdAt.substring(4, 6)},
                   {tweetObj.createdAt.substring(0, 4)}
                 </span>
               </div>
+              <FontAwesomeIcon icon={faEllipsisH} className="tweet__icon" />
             </div>
             <div className="tweet__text__container">
               <div className="tweet__text">{tweetObj.text}</div>

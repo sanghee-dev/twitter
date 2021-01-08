@@ -13,14 +13,19 @@ import Navigation from "components/Navigation";
 const AppRouter = ({ isLoggedIn, userObj, refreshUser }) => {
   return (
     <Router>
+      {isLoggedIn && <Navigation userObj={userObj} />}
       <Switch>
         {isLoggedIn ? (
           <>
             <Route exact path="/">
-              <Home userObj={userObj} />
+              <Home isLoggedIn={isLoggedIn} userObj={userObj} />
             </Route>
             <Route exact path="/profile">
-              <Profile userObj={userObj} refreshUser={refreshUser} />
+              <Profile
+                isLoggedIn={isLoggedIn}
+                userObj={userObj}
+                refreshUser={refreshUser}
+              />
             </Route>
           </>
         ) : (
@@ -32,7 +37,6 @@ const AppRouter = ({ isLoggedIn, userObj, refreshUser }) => {
           </>
         )}
       </Switch>
-      {isLoggedIn && <Navigation userObj={userObj} />}
     </Router>
   );
 };

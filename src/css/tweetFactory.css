@@ -1,35 +1,53 @@
 .tweetFactory__container {
   display: flex;
   flex-direction: row;
-  padding: var(--column-space) 0;
+  padding: var(--default-space);
   border-bottom: var(--main-border);
 }
-.tweetFactory__column {
+.tweetFactory__container > img {
+  margin-right: 12px;
+}
+.tweetFactory__input {
   display: flex;
   flex-direction: column;
 }
-.tweetFactory__column > div {
+.tweetFactory__input > div {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-bottom: var(--column-space);
 }
 
 /* column 1 */
 /* column 2 */
-.tweetFactory__column:nth-child(2) {
-  width: 80vw;
+.tweetFactory__input div:nth-child(3) {
+  width: 350px;
+  padding-top: var(--column-space);
+  border-top: var(--main-border);
+}
+
+/* text */
+.tweetFactory__input__text {
+  width: 350px;
+  height: 30px;
+  margin-top: 10px;
+  font-size: 20px;
+  margin-bottom: var(--column-space);
+}
+.tweetFactory__input__text::placeholder {
+  font-size: 20px;
+  color: var(--darkest-gray);
+  font-weight: 300;
 }
 
 /* attachment */
-.tweet__attachment {
-  width: 350px;
+.tweetFactory__attachment {
+  width: 300px;
   height: 200px;
   object-fit: cover;
   border-radius: 12px;
   border: var(--main-border);
 }
-.tweet__attachment__button {
+.tweetFactory__attachment__button {
   position: absolute;
   right: 4vw;
   border: none;
@@ -38,43 +56,31 @@
   cursor: pointer;
   background-color: var(--darker-gray);
 }
-.tweet__attachment__button:hover {
+.tweetFactory__attachment__button:hover {
   background-color: var(--darkest-gray);
 }
-.tweet__attachment__button .icon {
+.tweetFactory__attachment__button .icon {
   color: white;
 }
 
-/* text */
-.tweet__input__container {
+/* buttons */
+.tweetFactory__input__container {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.tweet__input__text {
-  width: 200px;
-  height: 30px;
-  padding: 4px;
-  font-size: 20px;
-}
-.tweet__input__text::placeholder {
-  font-size: 20px;
-  color: var(--darker-gray);
-}
-
-/* buttons */
-.tweet__input__label {
+.tweetFactory__input__label {
   width: 36px;
   height: 36px;
   border-radius: 50%;
   cursor: pointer;
 }
-.tweet__input__file {
+.tweetFactory__input__file {
   width: 0;
   height: 0;
   overflow: hidden;
 }
-.tweet__input__button {
+.tweetFactory__input__button {
   all: unset;
   width: 70px;
   height: 40px;
@@ -86,6 +92,13 @@
   background-color: var(--main-blue);
   cursor: pointer;
 }
-.tweet__input__button:hover {
+.tweetFactory__input__button:hover {
   background-color: var(--dark-blue);
+}
+
+.tweetFactory__line {
+  width: 88vw;
+  height: 10px;
+  background-color: var(--lighter-gray);
+  border-bottom: var(--main-border);
 }
