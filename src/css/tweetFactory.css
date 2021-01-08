@@ -22,16 +22,17 @@
 .tweetFactory__input div:nth-child(3) {
   width: 350px;
   padding-top: var(--column-space);
-  border-top: var(--main-border);
 }
 
 /* text */
 .tweetFactory__input__text {
-  width: 350px;
+  width: 70vw;
   height: 30px;
   margin-top: 10px;
   font-size: 20px;
-  margin-bottom: var(--column-space);
+  margin-bottom: 4px;
+  padding-bottom: var(--column-space);
+  border-bottom: var(--main-border);
 }
 .tweetFactory__input__text::placeholder {
   font-size: 20px;
@@ -66,20 +67,28 @@
 /* buttons */
 .tweetFactory__input__container {
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
 }
 .tweetFactory__input__label {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   cursor: pointer;
+}
+.tweetFactory__input__label .icon {
+  font-size: 24px;
 }
 .tweetFactory__input__file {
   width: 0;
   height: 0;
   overflow: hidden;
 }
+.tweetFactory__input__label button {
+  width: 36px;
+  height: 36px;
+}
+/* Tweet button */
 .tweetFactory__input__button {
   all: unset;
   width: 70px;
@@ -97,7 +106,7 @@
 }
 
 .tweetFactory__line {
-  width: 88vw;
+  width: 86vw;
   height: 10px;
   background-color: var(--lighter-gray);
   border-bottom: var(--main-border);

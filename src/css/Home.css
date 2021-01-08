@@ -1,9 +1,46 @@
-.home__container {
-  width: 87vw;
-  margin-left: 12vw;
+.home__screen {
+  display: flex;
+  border-right: var(--main-border);
 }
 .home__title {
   padding: 16px var(--default-space);
   font-weight: 800;
   border-bottom: var(--main-border);
+}
+
+@media screen and (min-width: 600px) {
+  /* home */
+  .home__container {
+    width: 514px;
+  }
+  .home__title {
+    width: 514px;
+  }
+
+  /* tweetFactory */
+  .tweetFactory__container {
+    width: 514px;
+  }
+  .tweetFactory__input {
+    width: 432px;
+  }
+  .tweetFactory__input__text {
+    width: 432px;
+  }
+  .tweetFactory__input__container {
+  }
+  .tweetFactory__line {
+    width: 514px;
+  }
+
+  /* tweet */
+  .tweet__container {
+    width: 514px;
+  }
+  .tweet__text__container {
+    width: 432px;
+  }
+  .tweet__object__container {
+    width: 432px;
+  }
 }

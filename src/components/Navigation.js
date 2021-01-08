@@ -24,20 +24,23 @@ const Navigation = ({ userObj }) => (
             <FontAwesomeIcon icon={faUser} className="icon" />
           </li>
         </Link>
-        <Link>
+        <Link to="/">
           <li className="button container nav__icon">
             <FontAwesomeIcon icon={faBell} className="icon" />
           </li>
         </Link>
-        <Link>
+        <Link to="/">
           <li className="button container nav__icon">
             <FontAwesomeIcon icon={faCog} className="icon" />
           </li>
         </Link>
-        <Link>
+        <Link to="/">
           <li className="button container nav__icon nav__write">
             <FontAwesomeIcon icon={faPlus} className="icon nav__write__plus" />
-            <FontAwesomeIcon icon={faFeatherAlt} className="icon" />
+            <FontAwesomeIcon
+              icon={faFeatherAlt}
+              className="icon nav__write__feather"
+            />
           </li>
         </Link>
       </div>

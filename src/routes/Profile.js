@@ -51,6 +51,7 @@ const Profile = ({ isLoggedIn, userObj, refreshUser }) => {
 
   return (
     <div className="profile__container">
+      {isLoggedIn && <Navigation userObj={userObj} />}
       <div>
         <h2>{userObj.displayName}'s Profile</h2>
         <img

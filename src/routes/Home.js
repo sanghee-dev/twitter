@@ -18,11 +18,12 @@ const Home = ({ isLoggedIn, userObj }) => {
   }, []);
 
   return (
-    <div className="home__container">
-      <div>
+    <div className="home__screen">
+      {isLoggedIn && <Navigation userObj={userObj} />}
+      <div className="home__container">
         <h2 className="home__title">Home</h2>
         <TweetFactory userObj={userObj} />
-        <div style={{ marginTop: 50 }}>
+        <div>
           {tweets.map((tweet) => (
             <Tweet
               key={tweet.id}

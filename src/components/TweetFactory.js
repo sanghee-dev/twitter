@@ -129,7 +129,7 @@ const TweetFactory = ({ userObj }) => {
             />
             <button
               type="submit"
-              className="tweetFactory__input__button container"
+              className="tweetFactory__input__file tweetFactory__input__button container"
             >
               Tweet
             </button>

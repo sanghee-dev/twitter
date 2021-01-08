@@ -1,6 +1,5 @@
 .tweet__container {
   display: flex;
-  flex-direction: row;
   padding: var(--default-space);
   border-bottom: var(--main-border);
 }
@@ -17,7 +16,9 @@
 }
 .tweet__object__container {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 .tweet__object__container span {
   margin-right: 4px;
@@ -26,29 +27,30 @@
   text-decoration: underline;
   cursor: pointer;
 }
-.tweet__nickname {
-  color: var(--darkest-gray);
-  font-weight: 300;
-}
+.tweet__nickname,
 .tweet__createdAt {
   color: var(--darkest-gray);
   font-weight: 300;
+  font-size: 14px;
 }
 .tweet__icon {
-  color: var(--darkest-gray);
+  color: var(--darker-gray);
 }
 
 .tweet__text__container {
-  width: 70vw;
+  width: 67vw;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin-right: var(--default-space);
 }
 .tweet__text {
   font-weight: 400;
 }
 .tweet__button {
+  width: 24px;
+  height: 24px;
   background-color: white;
   border: none;
   outline: none;
@@ -60,6 +62,7 @@
   border: none;
   color: var(--darker-gray);
   border: none;
+  font-size: var(--h3);
 }
 
 .tweet__attachment {

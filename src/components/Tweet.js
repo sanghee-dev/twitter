@@ -70,10 +70,6 @@ const Tweet = ({ tweetObj, isOwner }) => {
                   {tweetObj.createdAt.substring(0, 4)}
                 </span>
               </div>
-              <FontAwesomeIcon icon={faEllipsisH} className="tweet__icon" />
-            </div>
-            <div className="tweet__text__container">
-              <div className="tweet__text">{tweetObj.text}</div>
               <div>
                 {isOwner && (
                   <>
@@ -92,6 +88,9 @@ const Tweet = ({ tweetObj, isOwner }) => {
                   </>
                 )}
               </div>
+            </div>
+            <div className="tweet__text__container">
+              <div className="tweet__text">{tweetObj.text}</div>
             </div>
             <div>
               {tweetObj.attachmentUrl && (

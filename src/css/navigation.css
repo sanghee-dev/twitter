@@ -1,23 +1,23 @@
 .nav__container {
-  width: 13vw;
+  width: 14vw;
   height: 100vh;
   padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
-  position: fixed;
+  /* position: fixed;
   top: 0;
-  left: 0;
+  left: 0; */
   background-color: white;
   border-right: var(--main-border);
 }
 
 .nav__write {
+  margin: 8px 0;
   background-color: var(--main-blue);
   color: white;
 }
-
 .nav__write .icon {
   color: white;
   font-size: 20px;
@@ -25,6 +25,18 @@
 .nav__write:hover {
   background-color: var(--dark-blue);
 }
+.nav__write .nav__write__plus {
+  font-size: 10px;
+  position: relative;
+  top: -2px;
+  left: 1px;
+}
+.nav__write__feather {
+  position: relative;
+  top: 2px;
+  left: -1px;
+}
+
 .nav__profile__image {
   margin-right: 0;
   width: 40px;
