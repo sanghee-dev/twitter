@@ -38,7 +38,8 @@ const Home = ({ isLoggedIn, userObj }) => {
       </div>
       <div className="home__side">
         <div className="home__side__trends">
-          <h2 className="home__title">Trends for you</h2>
+          <h2 className="home__side__title">Trends for you</h2>
+          <div></div>
         </div>
       </div>
     </div>

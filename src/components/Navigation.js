@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
@@ -10,53 +10,105 @@ import {
   faPlus,
 } from "@fortawesome/free-solid-svg-icons";
 
-const Navigation = ({ userObj }) => (
-  <nav>
-    <ul className="nav__container">
-      <div>
+const Navigation = ({ userObj }) => {
+  const [buttonNumber, setButtonNumber] = useState("1");
+
+  const colorBtn = (number) => {
+    return number === buttonNumber ? "rgb(29,161,242)" : "rgb(220,220,220)";
+  };
+
+  return (
+    <nav>
+      <ul className="nav__container">
+        <div>
+          <Link to="/">
+            <li
+              className="button container nav__icon"
+              onClick={(event) => {
+                setButtonNumber("1");
+                console.log(event.target);
+                event.preventDefault();
+              }}
+            >
+              <FontAwesomeIcon
+                icon={faTwitter}
+                className="icon"
+                style={{ color: colorBtn("1") }}
+              />
+            </li>
+          </Link>
+          <Link to="/profile">
+            <li
+              className="button container nav__icon"
+              onClick={(event) => {
+                setButtonNumber("2");
+                event.preventDefault();
+              }}
+            >
+              <FontAwesomeIcon
+                icon={faUser}
+                className="icon"
+                style={{ color: colorBtn("2") }}
+              />
+            </li>
+          </Link>
+          <Link to="/">
+            <li
+              className="button container nav__icon"
+              onClick={(event) => {
+                setButtonNumber("3");
+                event.preventDefault();
+              }}
+            >
+              <FontAwesomeIcon
+                icon={faBell}
+                className="icon"
+                style={{ color: colorBtn("3") }}
+              />
+            </li>
+          </Link>
+          <Link to="/">
+            <li
+              className="button container nav__icon"
+              onClick={(event) => {
+                setButtonNumber("4");
+                event.preventDefault();
+              }}
+            >
+              <FontAwesomeIcon
+                icon={faCog}
+                className="icon"
+                style={{ color: colorBtn("4") }}
+              />
+            </li>
+          </Link>
+          <Link to="/">
+            <li className="button container nav__icon nav__write">
+              <FontAwesomeIcon
+                icon={faPlus}
+                className="icon nav__write__plus"
+              />
+              <FontAwesomeIcon
+                icon={faFeatherAlt}
+                className="icon nav__write__feather"
+              />
+            </li>
+          </Link>
+        </div>
+
         <Link to="/">
-          <li className="button container nav__icon">
-            <FontAwesomeIcon icon={faTwitter} className="icon" />
-          </li>
-        </Link>
-        <Link to="/profile">
-          <li className="button container nav__icon">
-            <FontAwesomeIcon icon={faUser} className="icon" />
-          </li>
-        </Link>
-        <Link to="/">
-          <li className="button container nav__icon">
-            <FontAwesomeIcon icon={faBell} className="icon" />
-          </li>
-        </Link>
-        <Link to="/">
-          <li className="button container nav__icon">
-            <FontAwesomeIcon icon={faCog} className="icon" />
-          </li>
-        </Link>
-        <Link to="/">
-          <li className="button container nav__icon nav__write">
-            <FontAwesomeIcon icon={faPlus} className="icon nav__write__plus" />
-            <FontAwesomeIcon
-              icon={faFeatherAlt}
-              className="icon nav__write__feather"
+          <li className="button container nav__icon nav__profile">
+            <img
+              src={userObj.photoURL}
+              width="30px"
+              height="30px"
+              className="profile__image nav__profile__image"
             />
           </li>
         </Link>
-      </div>
-
-      <Link to="/">
-        <li className="button container nav__icon nav__profile">
-          <img
-            src={userObj.photoURL}
-            width="30px"
-            height="30px"
-            className="profile__image nav__profile__image"
-          />
-        </li>
-      </Link>
-    </ul>
-  </nav>
-);
+      </ul>
+    </nav>
+  );
+};
 
 export default Navigation;
