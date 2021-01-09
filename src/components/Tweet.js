@@ -7,7 +7,7 @@ import {
   faEllipsisH,
 } from "@fortawesome/free-solid-svg-icons";
 
-const Tweet = ({ tweetObj, isOwner }) => {
+const Tweet = ({ tweetObj, userObj, isOwner }) => {
   const [editing, setEditing] = useState(false);
   const [newTweet, setNewTweet] = useState(tweetObj.text);
   const onDeleteClick = async () => {
@@ -52,8 +52,8 @@ const Tweet = ({ tweetObj, isOwner }) => {
       ) : (
         <div className="tweet__container">
           <img
-            src={tweetObj.photoURL}
-            alt={tweetObj.displayName}
+            src={userObj.photoURL}
+            alt={userObj.displayName}
             className="profile__image"
           />
           <div className="tweet__object">

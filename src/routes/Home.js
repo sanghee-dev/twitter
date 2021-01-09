@@ -28,11 +28,17 @@ const Home = ({ isLoggedIn, userObj }) => {
             <Tweet
               key={tweet.id}
               tweetObj={tweet}
+              userObj={userObj}
               isOwner={tweet.userId === userObj.uid}
               displayName={userObj.displayName}
               photoURL={userObj.photoURL}
             />
           ))}
+        </div>
+      </div>
+      <div className="home__side">
+        <div className="home__side__trends">
+          <h2 className="home__title">Trends for you</h2>
         </div>
       </div>
     </div>

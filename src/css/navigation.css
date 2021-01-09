@@ -1,16 +1,18 @@
 .nav__container {
-  width: 14vw;
+  width: 13vw;
   height: 100vh;
   padding: 10px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
-  /* position: fixed;
-  top: 0;
-  left: 0; */
   background-color: white;
   border-right: var(--main-border);
+  position: fixed;
+  top: 0;
+  left: 1vw;
+  z-index: 2;
 }
 
 .nav__write {
