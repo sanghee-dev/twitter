@@ -3,6 +3,7 @@ import { dbService } from "fbase";
 import Tweet from "components/Tweet";
 import TweetFactory from "components/TweetFactory";
 import Navigation from "components/Navigation";
+import Side from "components/Side";
 
 const Home = ({ isLoggedIn, userObj }) => {
   const [tweets, setTweets] = useState([]);
@@ -18,11 +19,12 @@ const Home = ({ isLoggedIn, userObj }) => {
   }, []);
 
   return (
-    <div className="home__screen">
+    <div className="main__screen">
       {isLoggedIn && <Navigation userObj={userObj} />}
-      <div className="home__container">
-        <h2 className="home__title">Home</h2>
+      <div className="main__container">
+        <h2 className="main__title">Home</h2>
         <TweetFactory userObj={userObj} />
+        <div className=".main__line"></div>
         <div>
           {tweets.map((tweet) => (
             <Tweet
@@ -36,12 +38,7 @@ const Home = ({ isLoggedIn, userObj }) => {
           ))}
         </div>
       </div>
-      <div className="home__side">
-        <div className="home__side__trends">
-          <h2 className="home__side__title">Trends for you</h2>
-          <div></div>
-        </div>
-      </div>
+      <Side />
     </div>
   );
 };

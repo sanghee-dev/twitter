@@ -4,7 +4,6 @@
   padding: var(--default-space);
   border-bottom: var(--main-border);
   margin-top: 53px;
-  width: 87vw;
 }
 .tweetFactory__container > img {
   margin-right: 12px;
@@ -20,45 +19,45 @@
 }
 
 .tweetFactory__input div:nth-child(3) {
-  width: 350px;
   padding-top: var(--column-space);
 }
 
-/* text */
+/* What's on your mind? */
 .tweetFactory__input__text {
-  width: 68vw;
+  width: 67vw;
+  border: 1px solid red;
   height: 30px;
-  margin-top: 10px;
-  font-size: 20px;
+  font-size: 18px;
+  margin-top: var(--column-space);
   margin-bottom: 4px;
   padding-bottom: var(--column-space);
   border-bottom: var(--main-border);
 }
 .tweetFactory__input__text::placeholder {
-  font-size: 20px;
+  font-size: 18px;
   color: var(--darkest-gray);
-  font-weight: 300;
+  font-weight: 400;
 }
 
 /* attachment */
 .tweetFactory__attachment {
-  width: 300px;
+  width: 68vw;
   height: 200px;
   object-fit: cover;
   border-radius: 12px;
   border: var(--main-border);
 }
+/* attachment X button */
 .tweetFactory__attachment__button {
-  position: absolute;
-  right: 4vw;
   border: none;
-  margin: 6px 22px;
   outline: none;
   cursor: pointer;
-  background-color: var(--darker-gray);
+  margin: 6px;
+  background-color: var(--dark-gray);
+  position: fixed;
 }
 .tweetFactory__attachment__button:hover {
-  background-color: var(--darkest-gray);
+  background-color: var(--darker-gray);
 }
 .tweetFactory__attachment__button .icon {
   color: white;
@@ -69,45 +68,28 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border: 1px solid red;
 }
-.tweetFactory__input__label {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  cursor: pointer;
-}
-.tweetFactory__input__label .icon {
-  font-size: 24px;
-}
+
 .tweetFactory__input__file {
   width: 0;
   height: 0;
   overflow: hidden;
 }
-.tweetFactory__input__label button {
-  width: 36px;
-  height: 36px;
-}
+
 /* Tweet button */
 .tweetFactory__input__button {
   all: unset;
-  width: 70px;
-  height: 40px;
+  width: 64px;
+  height: 32px;
   border-radius: 20px;
   color: white;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
   text-align: center;
   background-color: var(--main-blue);
   cursor: pointer;
 }
 .tweetFactory__input__button:hover {
   background-color: var(--dark-blue);
-}
-
-.tweetFactory__line {
-  width: 86vw;
-  height: 10px;
-  background-color: var(--lighter-gray);
-  border-bottom: var(--main-border);
 }

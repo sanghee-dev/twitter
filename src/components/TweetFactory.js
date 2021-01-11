@@ -94,29 +94,29 @@ const TweetFactory = ({ userObj }) => {
               className="tweetFactory__input__text"
             />
           </div>
-          <div>
+          <div className="tweetFactory__attachment__container">
             {attachment && (
               <>
                 <div>
+                  <button
+                    onClick={clearAttachment}
+                    className="tweetFactory__attachment__button tweet__button button"
+                  >
+                    <FontAwesomeIcon icon={faTimes} className="icon" />
+                  </button>
                   <img
                     src={attachment}
                     alt={userObj.displayName}
                     className="tweetFactory__attachment"
                   />
                 </div>
-                <button
-                  onClick={clearAttachment}
-                  className="tweetFactory__attachment__button button"
-                >
-                  <FontAwesomeIcon icon={faTimes} className="icon" />
-                </button>
               </>
             )}
           </div>
           <div className="tweetFactory__input__container">
             <label
               for="tweetFactory__input__file"
-              className="tweetFactory__input__label container button"
+              className="tweet__button button"
             >
               <FontAwesomeIcon icon={faImages} className="icon" />
             </label>
@@ -136,7 +136,6 @@ const TweetFactory = ({ userObj }) => {
           </div>
         </div>
       </form>
-      <div className="tweetFactory__line"></div>
     </>
   );
 };

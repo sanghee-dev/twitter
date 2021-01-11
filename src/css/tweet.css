@@ -60,7 +60,7 @@
 }
 .tweet__button .icon {
   border: none;
-  color: var(--darker-gray);
+  color: var(--dark-gray);
   border: none;
   font-size: var(--h3);
 }

@@ -24,10 +24,8 @@ const Navigation = ({ userObj }) => {
           <Link to="/">
             <li
               className="button container nav__icon"
-              onClick={(event) => {
+              onClick={() => {
                 setButtonNumber("1");
-                console.log(event.target);
-                event.preventDefault();
               }}
             >
               <FontAwesomeIcon
@@ -40,9 +38,8 @@ const Navigation = ({ userObj }) => {
           <Link to="/profile">
             <li
               className="button container nav__icon"
-              onClick={(event) => {
+              onClick={() => {
                 setButtonNumber("2");
-                event.preventDefault();
               }}
             >
               <FontAwesomeIcon
@@ -55,9 +52,8 @@ const Navigation = ({ userObj }) => {
           <Link to="/">
             <li
               className="button container nav__icon"
-              onClick={(event) => {
+              onClick={() => {
                 setButtonNumber("3");
-                event.preventDefault();
               }}
             >
               <FontAwesomeIcon
@@ -70,9 +66,8 @@ const Navigation = ({ userObj }) => {
           <Link to="/">
             <li
               className="button container nav__icon"
-              onClick={(event) => {
+              onClick={() => {
                 setButtonNumber("4");
-                event.preventDefault();
               }}
             >
               <FontAwesomeIcon

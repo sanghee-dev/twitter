@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { authService, storageService } from "fbase";
 import { useHistory } from "react-router-dom";
 import Navigation from "components/Navigation";
+import Side from "components/Side";
 
 const Profile = ({ isLoggedIn, userObj, refreshUser }) => {
   const history = useHistory();
@@ -50,10 +51,10 @@ const Profile = ({ isLoggedIn, userObj, refreshUser }) => {
   };
 
   return (
-    <div className="profile__container">
+    <div className="main__container">
       {isLoggedIn && <Navigation userObj={userObj} />}
-      <div>
-        <h2>{userObj.displayName}'s Profile</h2>
+      <div className="main__container">
+        <h2 className="main__title">{userObj.displayName}'s Profile</h2>
         <img
           src={userObj.photoURL}
           alt={userObj.displayName}
@@ -72,6 +73,7 @@ const Profile = ({ isLoggedIn, userObj, refreshUser }) => {
         </form>
         <button onClick={onLogOutClick}>Log Out</button>
       </div>
+      <Side />
     </div>
   );
 };
